@@ -1,0 +1,7 @@
+[Nemo Action]
+Name=KiCad Project copy rename
+Comment=Project folder and file "*.pro" , "*.sch" , "*.net" rename
+Exec=<file-copy-rename/file-copy-rename.sh "%F">
+Selection=s
+Extensions=pro;
+Terminal=true
