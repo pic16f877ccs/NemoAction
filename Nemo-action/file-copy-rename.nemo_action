@@ -1,6 +1,6 @@
 [Nemo Action]
 Name=KiCad Project copy rename
-Comment=Project folder and file "*.pro" , "*.sch" , "*.net" rename
+Comment=Project folder and file "*.pro" , "*.sch" , "*.kicad_pcb" , "*.net" , "*.lib" , "*kicad_mod" , "*.kicad_wks" rename
 Exec=<file-copy-rename/file-copy-rename.sh "%F">
 Selection=s
 Extensions=pro;
