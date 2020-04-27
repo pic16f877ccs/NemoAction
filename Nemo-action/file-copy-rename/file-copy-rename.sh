@@ -35,9 +35,17 @@ base_name=`basename "$file_path"` ;
 base_name_cut=`basename -s .pro "$file_path"` ;
 #
 #
-base_name_rename=$(zenity --entry --title="$title" --text="$text" --entry-text="$base_name_cut" --height="$height" 2>/dev/null) ;
+base_name_rename=$(zenity --entry --title="$title" --text="$text" --entry-text="$base_name_cut" --height="$height" --width="$width" 2>/dev/null) ;
 #
 #
+# Erstelle ein Verzeichnis, wenn es noch nicht existiert
+if [ ! -e "$dir_name/$base_name_rename" ] 
+	then mkdir "$dir_name/$base_name_rename" ;
+fi ;
+#
+#
+mv -i "$dir_name/$base_name_rename" "$dir_name/$base_name_rename/../.."
+#  
 # Test rename and copy files.
 cp -i "$dir_name/${base_name_cut}.pro" "$dir_name/${base_name_rename}.pro" ;
 #
@@ -68,7 +76,7 @@ fi ;
 if [ -f "$dir_name/fp-info-cache" ] 
     then cp -i "$dir_name/fp-info-cache" "$dir_name/fp-info-cache" ;   
 fi ;
+#  
 #
-#
-Terminal=true ;
-sleep 10 
+#Terminal=true ;
+#sleep 10 
