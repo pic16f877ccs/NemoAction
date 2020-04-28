@@ -25,20 +25,21 @@ if [ -f "$langdir/$lang.ini" ]
 fi ;
 #
 #
-#new_basename=`echo "$basename" | sed "s/$space/$replace/g"` ;
-#new_basename=`echo "$@" | sed "s/\ /\_/g"`
-#
-#
 file_path="$@" ; 
 dir_name=`dirname "$file_path"` ;
 base_name=`basename "$file_path"` ;
 base_name_cut=`basename -s .pro "$file_path"` ;
 #
 #
-base_name_rename=$(zenity --entry --title="$title" --text="$text" --entry-text="$base_name_cut" --height="$height" --width="$width" 2>/dev/null) ;
+# Zenity entry dialog. 
+# Create a scale dialog.
+# Ask for rotation
+if ! base_name_rename=$(zenity --entry --title="$title" --text="$text" --entry-text="$base_name_cut" --height="$height" --width="$width" 2>/dev/null) ;
+	then exit ;
+fi ;
 #
 #
-# Erstelle ein Verzeichnis, wenn es noch nicht existiert
+# Create a directory if it doesn't already exist.
 if [ ! -e "$dir_name/$base_name_rename" ] 
 	then mkdir "$dir_name/../$base_name_rename" ;
 fi ;
@@ -75,5 +76,4 @@ if [ -f "$dir_name/fp-info-cache" ]
 fi ;
 #  
 #
-#Terminal=true ;
-#sleep 10 
+
