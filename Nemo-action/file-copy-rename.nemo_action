@@ -1,8 +1,8 @@
 [Nemo Action]
 Name=KiCad Project copy rename
 Comment=Project folder and file "*.pro" , "*.sch" , "*.kicad_pcb" , "*.net" , "*.lib" , "*kicad_mod" , "*.kicad_wks" rename
-Name[de]=KiCad Projekt kopieren unbenennen
-Comment[de]=Projekt Ordner und Datei "*.pro" , "*.sch" , "*.kicad_pcb" , "*.net" , "*.lib" , "*kicad_mod" , "*.kicad_wks" unbenennen
+Name[de]=KiCad Projekt kopieren umbenennen
+Comment[de]=Projekt Ordner und Datei "*.pro" , "*.sch" , "*.kicad_pcb" , "*.net" , "*.lib" , "*kicad_mod" , "*.kicad_wks" umbenennen
 Exec=<file-copy-rename/file-copy-rename.sh "%F">
 Selection=s
 Extensions=pro;
