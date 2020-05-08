@@ -13,7 +13,7 @@
 scriptdir=`dirname "$0"` ;
 #
 # Get your language
-lang="${MDM_LANG%_*}" ;
+lang=$(locale | grep LANGUAGE | cut -d= -f2 | cut -d_ -f1) ;
 #
 #
 # Imort the translation suiting your language. 
@@ -26,9 +26,9 @@ fi ;
 #
 #
 file_path="$@" ; 
-dir_name=`dirname "$file_path"` ;
-base_name=`basename "$file_path"` ;
-base_name_cut=`basename -s .pro "$file_path"` ;
+dir_name=$(dirname "$file_path") ;
+base_name=$(basename "$file_path") ;
+base_name_cut=$(basename -s .pro "$file_path") ;
 #
 #
 # Zenity entry dialog. 
